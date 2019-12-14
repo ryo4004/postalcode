@@ -1,8 +1,8 @@
-# Postal Code
+![postalcode](https://user-images.githubusercontent.com/25874594/70844367-89d1d280-1e83-11ea-9e87-468357ca3ebf.png)
 
-PostalCodeは、Express(Node.js)上で動作する郵便番号を検索するAPIです。
-日本郵便が公開している郵便番号データを元に、データベースを作成します。
-郵便番号をHTTPリクエストでPOSTすると住所を返します。
+PostalCodeは、Express(Node.js)上で動作する郵便番号を検索するAPIです。  
+日本郵便が公開している郵便番号データを元に、データベースを作成します。  
+郵便番号をHTTPリクエストでPOSTすると住所を返します。  
 お問い合わせフォームやECサイトなどに郵便番号検索機能をつけることができます。
 
 ## デモ
