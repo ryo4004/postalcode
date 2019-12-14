@@ -6,11 +6,11 @@ The postal code data is created as a NeDB database based on the postal code data
 Post the postal code as a HTTP request, you can get the place name that is estimated.
 You can add a postal code search to your websites.
 
-<a href='README.ja.md'>Here</a> for Japanese guide.
+[Here](README.ja.md) for Japanese guide.
 
 ### Demo
 
-<a href='https://postalcode.netlify.com/'>https://postalcode.netlify.com/</a>
+[https://postalcode.netlify.com](https://postalcode.netlify.com)
 
 ## Usage
 
@@ -57,8 +57,8 @@ If you want to run it permanently, use pm2 or something.
 
 ## Client sample
 
-See <a href='client/index.html'>client/index.html</a>.  
-You can check also <a href='https://postalcode.netlify.com/'>demo</a>.
+See [client/index.html](client/index.html).  
+You can check also my [demo](https://postalcode.netlify.com).
 
 ## Update postal code database
 
@@ -72,7 +72,7 @@ rm -R database
 
 ### Download the CSV file
 
-Postal code data can be obtained by <a href='https://www.post.japanpost.jp/zipcode/download.html'>download postal code data</a> from Japan Post website.
+Postal code data can be obtained by [郵便番号データダウンロード](https://www.post.japanpost.jp/zipcode/download.html) from Japan Post website.
 This project uses the "全国一括" file in "読み仮名データの促音・拗音を小書きで表記するもの".
 
 Download and unzip with the following command.

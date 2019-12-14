@@ -1,16 +1,16 @@
 ![postalcode](https://user-images.githubusercontent.com/25874594/70855125-b7149400-1f08-11ea-9f08-c565c10c7db8.png)
 
 Postal Codeは、Express(Node.js)で動作する郵便番号を検索するAPIを作成できます。  
-郵便番号データは日本郵便が公開している<a href='https://www.post.japanpost.jp/zipcode/download.html'>郵便番号データ</a>を元に<a href='https://github.com/louischatriot/nedb'>NeDB</a>データベースを作成します。
+郵便番号データは日本郵便が公開している[郵便番号データ](https://www.post.japanpost.jp/zipcode/download.html)を元に[NeDB](https://github.com/louischatriot/nedb)データベースを作成します。
 
 郵便番号をHTTPリクエストでPOSTすると住所を返します。  
 お問い合わせフォームやECサイトなどに郵便番号検索機能をつけることができます。
 
-英語の解説は<a href='README.md'>こちら</a>
+英語の解説は[こちら](README.md)。
 
 ### デモ
 
-<a href='https://postalcode.netlify.com/'>https://postalcode.netlify.com/</a>
+[https://postalcode.netlify.com](https://postalcode.netlify.com)
 
 ## 使い方
 
@@ -57,8 +57,8 @@ Expressサーバが起動し、3000番ポートでリクエストを待機しま
 
 ## クライアントサンプル
 
-<a href='client/index.html'>client/index.html</a>を参照ください。  
-動作は<a href='https://postalcode.netlify.com/'>デモ</a>で確認できます。
+[client/index.html](client/index.html)参照ください。  
+動作は[デモ](https://postalcode.netlify.com)で確認できます。
 
 ## 郵便番号データベースの更新
 
@@ -72,7 +72,7 @@ rm -R database
 
 ### CSVファイルのダウンロード
 
-郵便番号データは日本郵便のWebサイト内の<a href='https://www.post.japanpost.jp/zipcode/download.html'>郵便番号データダウンロード</a>より取得できます。
+郵便番号データは日本郵便のWebサイト内の[郵便番号データダウンロード](https://www.post.japanpost.jp/zipcode/download.html)より取得できます。
 
 このプロジェクトでは "読み仮名データの促音・拗音を小書きで表記するもの" 内の "全国一括" ファイルを使用しています。
 
