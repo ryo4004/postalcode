@@ -7,7 +7,7 @@ PostalCodeは、Express(Node.js)上で動作する郵便番号を検索するAPI
 
 ## デモ
 
-<a href='#'>ここ</a>で動作チェックができます。
+<a href='https://postalcode.netlify.com/'>こちら</a>で動作チェックができます。
 
 ## インストールと実行
 
