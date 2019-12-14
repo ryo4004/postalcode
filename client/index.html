@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sample</title>
+</head>
+<link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu&display=swap" rel="stylesheet">
+<style>
+  body {
+    color: #333;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  }
+  .logo {
+    width: 60%;
+    margin: 60px auto;
+  }
+  svg {
+    display: block;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    fill: url(#gradient);
+  }
+  h1 {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+  }
+  p {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+  }
+  .request, .response {
+    margin: 60px auto;
+    width: 80%;
+    max-width: 450px;
+    border: .55px solid #ccc;
+    border-radius: .25rem;
+  }
+  h2 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 16px 8px;
+  }
+  form {
+    margin: 8px;
+  }
+  input {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    color: #495057;
+    background: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: inherit;
+    line-height: 1.5;
+    transition: none;
+    box-sizing: border-box;
+  }
+  input:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: rgb(108,117,125);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(108,117,125,.25);
+  }
+  button {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    padding: .5rem 1rem;
+    border: 1px solid #6c757d;
+    border-radius: .25rem;
+    color: #6c757d;
+    background: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+    -webkit-appearance: button;
+    transition: none;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  button:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  button:focus {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(108,117,125,.25);
+  }
+  #request, #result {
+    font-family: consolas, monospace;
+  }
+  h3 {
+    margin: 1em 0;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  h3 span {
+    display: inline-block;
+    margin-right: .5em;
+    padding: 2px 6px;
+    border-radius: .25rem;
+    color: #fff;
+  }
+  .send h3 span {
+    background: #666;
+  }
+  .error h3 span {
+    background: #721c24;
+  }
+  .success h3 span {
+    background: #155724;
+  }
+  .send, .error, .success {
+    padding: 8px;
+  }
+  .send {
+    color: #1b1e21;
+    background-color: #d6d8d9;
+  }
+  .error {
+    color: #721c24;
+    background-color: #f8d7da;
+  }
+  .success {
+    color: #155724;
+    background-color: #d4edda;
+  }
+  label {
+    margin-right: .5em;
+    color: #666;
+  }
+  .json {
+    margin-top: 8px;
+    font-size: .8rem;
+  }
+</style>
+<body>
+  <div class="logo">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 480 480">
+      <defs>
+        <linearGradient id="gradient" gradientUnits="userSpaceOnUse" gradientTransform="rotate(-225)">
+          <stop offset="0%" stop-color="#FFE29F"/>
+          <stop offset="48%" stop-color="#FFA99F"/>
+          <stop offset="100%" stop-color="#FF719A"/>
+        </linearGradient>
+      </defs>
+      <path d="M286.86,175.679h95.701l66.81-67.467l-66.81-67.467H286.86V0h-93.722v40.744H91.609v134.935h101.529v37.467h-95.7 l-66.81,67.467l66.81,67.467h95.7V480h93.722V348.08h101.53V213.146H286.86V175.679z M213.139,20h53.722v20.744h-53.722V20z M111.609,60.744h262.61l47.005,47.467l-47.005,47.467h-262.61V60.744z M213.139,175.679h53.722v37.467h-53.722V175.679z M266.86,460h-53.722V348.08h53.722V460z M368.391,328.08H105.78l-47.005-47.467l47.005-47.467h262.61V328.08z"/>
+    </svg>
+  </div>
+  <h1>Postal Code</h1>
+  <p>This is a Node.js API application for Japanese postal code.</p>
+  <div class="request">
+    <h2>Make a request</h2>
+    <form>
+      <input type='text' placeholder='100-0001' />
+      <button id="send">Send</button>
+    </form>
+    <div id='request'></div>
+  </div>
+  <div class="response" id="response">
+    <h2>Show response here</h2>
+    <div id="result"></div>
+  </div>
+</body>
+<script>
+document.getElementById('send').addEventListener('click', (e) => {
+  e.preventDefault()
+  const input = document.getElementsByTagName('input')[0]
+  const req = document.getElementById('request')
+  const res = document.getElementById('result')
+  const request = new XMLHttpRequest()
+  request.onreadystatechange = function () {
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+      const response = JSON.parse(request.response)
+      console.log('get result', response)
+      if (response.error || !response.post) {
+        console.log('err')
+        return res.innerHTML = '<div class="error"><h3><span>Error</span><label>error:</label>' + response.error.type + '</h3><div class="json">' + JSON.stringify(response, null, "　").replace(/\n/g, '<br>') + '</div></div>'
+      }
+      return res.innerHTML = '<div class="success"><h3><span>Success</span><label>response:</label>' + response.post.address + '</h3><div class="json">' + JSON.stringify(response, null, "　").replace(/\n/g, '<br>') + '</div></div>'
+    }
+  }
+  request.addEventListener('progress', function(event) {
+    console.log('Error', event)
+    return req.innerHTML = ''
+    return res.innerHTML = ''
+  })
+  request.addEventListener('error', function(event) {
+    console.log('Error', event)
+    return req.innerHTML = '<div class="error"><h3><span>Error</span><label>error:</label>Network Error</h3><div>' + JSON.stringify({error: {type: 'serverNotWorking'}}, null, "　").replace(/\n/g, '<br>') + '</div></div>'
+  })
+  request.addEventListener('load', function(event) {
+    console.log('Load', event)
+    return req.innerHTML = '<div class="send"><h3><span>Success</span><label>query:</label>' + input.value + '</h3><div class="json">' + JSON.stringify({query: input.value}, null, "　").replace(/\n/g, '<br>') + '</div></div>'
+  })
+  request.open("POST", "http://192.168.1.22:3000/api", true)
+  request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
+  request.send('query=' + input.value)
+})
+</script>
+</html>
