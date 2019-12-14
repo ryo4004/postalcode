@@ -203,7 +203,7 @@ document.getElementById('send').addEventListener('click', (e) => {
     console.log('Load', event)
     return req.innerHTML = '<div class="send"><h3><span>Success</span><label>query:</label>' + input.value + '</h3><div class="json">' + JSON.stringify({query: input.value}, null, "　").replace(/\n/g, '<br>') + '</div></div>'
   })
-  request.open("POST", "https://postalcodejp.herokuapp.com/", true)
+  request.open("POST", "https://postalcodejp.herokuapp.com/api", true)
   request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
   request.send('query=' + input.value)
 })
