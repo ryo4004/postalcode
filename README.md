@@ -1,4 +1,4 @@
-![postalcode](https://user-images.githubusercontent.com/25874594/70855125-b7149400-1f08-11ea-9f08-c565c10c7db8.png)
+![postalcode](https://user-images.githubusercontent.com/25874594/70858752-59ee0200-1f4b-11ea-9a2a-510bcb91e398.png)
 
 Postal Code is an pplication for Japanese postal code made with Node.js(Express).
 The postal code data is created as a NeDB database based on the postal code data published by Japan Post.
