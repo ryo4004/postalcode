@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu&display=swap" rel="stylesheet">
 <style>
   body {
+    margin: 8px;
     color: #333;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   }
@@ -18,7 +19,8 @@
   }
   svg {
     display: block;
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
     height: 250px;
     margin: 0 auto;
     fill: url(#gradient);
@@ -42,7 +44,7 @@
   }
   .request, .response {
     margin: 60px auto;
-    width: 80%;
+    width: 100%;
     max-width: 450px;
     border: .55px solid #ccc;
     border-radius: .25rem;
@@ -153,6 +155,12 @@
     margin-top: 8px;
     font-size: .8rem;
   }
+  small {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
 </style>
 <body>
   <div class="logo">
@@ -168,7 +176,7 @@
     </svg>
   </div>
   <h1><a href='https://github.com/ryo4004/postalcode'>Postal Code</a></h1>
-  <p>A Node.js application for Japanese postal code.</p>
+  <p>A Node.js API for Japanese postal code.</p>
   <div class="request">
     <h2>Make a request</h2>
     <form>
@@ -181,6 +189,9 @@
     <h2>Show response here</h2>
     <div id="result"></div>
   </div>
+  <small>
+    Fork me on <a href='https://github.com/ryo4004/postalcode'>GitHub</a>
+  </small>
 </body>
 <script>
 document.getElementById('send').addEventListener('click', (e) => {
