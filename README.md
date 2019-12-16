@@ -29,12 +29,12 @@ The postal code can be hyphenated or unhyphenated.
 | parameter | value |
 :---|:---
 | post | |
-| ├&nbsp;postalCode | 郵便番号 |
-| ├&nbsp;address | 住所全文 |
-| └&nbsp;detail | 詳細情報 |
-| &nbsp;&nbsp;├&nbsp;prefecture | 都道府県名 |
-| &nbsp;&nbsp;├&nbsp;city | 市区町村名 |
-| &nbsp;&nbsp;└&nbsp;town | 町域名 |
+| ├&nbsp;postalCode | postal code |
+| ├&nbsp;address | full address |
+| └&nbsp;detail | detail information |
+| &nbsp;&nbsp;├&nbsp;prefecture | prefecture |
+| &nbsp;&nbsp;├&nbsp;city | city |
+| &nbsp;&nbsp;└&nbsp;town | town |
 
 ## Installation
 
@@ -87,6 +87,8 @@ mv ken_all [download date]
 
 Create new NeDB database from the downloaded CSV file.
 It will take some time to complete.
+Exclude some postal code data because public data contains some data that might not be needed.
+The excluded data is placed in `database/except.db`.
 
 ```
 node make.js
