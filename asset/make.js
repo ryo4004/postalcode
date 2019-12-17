@@ -2,14 +2,14 @@ const fs = require('fs')
 const path = require('path')
 const NeDB = require('nedb')
 const lib = require('./library')
-const postalCSV = fs.readFileSync('./' + lib.directory + '/KEN_ALL.CSV', 'utf-8')
+const postalCSV = fs.readFileSync('./' + lib.prefDirectory + '/KEN_ALL.CSV', 'utf-8')
 const postalline = postalCSV.split('\n')
 const amount = postalline.length
 const rem = (text) => text.slice(0, -1).slice(1)
 
 const createDB = (id) => {
   return new NeDB({
-    filename: path.join(__dirname, '/database/' + lib.directory + '/' + id + '.db'),
+    filename: path.join(__dirname, '/database/' + lib.prefDirectory + '/' + id + '.db'),
     autoload: true
   })
 }
@@ -24,7 +24,7 @@ const setItem = (id, item) => {
 }
 
 const exceptDB = new NeDB({
-  filename: path.join(__dirname, '/database/' + lib.directory + '/except.db'),
+  filename: path.join(__dirname, '/database/' + lib.prefDirectory + '/except.db'),
   autoload: true
 })
 

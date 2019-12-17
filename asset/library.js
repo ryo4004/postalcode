@@ -1,5 +1,6 @@
-const directory = '20190830'
+const prefDirectory = 'ken_all'
+const officeDirectory = 'jigyosyo'
 
 module.exports = {
-  directory
+  prefDirectory, officeDirectory
 }
