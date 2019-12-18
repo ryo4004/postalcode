@@ -18,6 +18,7 @@ app.use((req, res, next) => {
   next()
 })
 
+const fs = require('fs')
 const path = require('path')
 const NeDB = require('nedb')
 const lib = require('./asset/library')
@@ -31,9 +32,18 @@ const showTime = () => {
   return time.getFullYear() + '/' + (time.getMonth() + 1) + '/' + time.getDate() + ' ' + z(time.getHours()) + ':' + z(time.getMinutes()) + ':' + z(time.getSeconds())
 }
 
+const checkDB = (id) => {
+  try {
+    fs.statSync(path.join(__dirname, '/asset/database/' + id + '.db'))
+    return true
+  } catch (error) {
+    if (error.code === 'ENOENT') return false
+  }
+}
+
 const createDB = (id) => {
   return new NeDB({
-    filename: path.join(__dirname, '/asset/database/' + lib.directory + '/' + id + '.db'),
+    filename: path.join(__dirname, '/asset/database/' + id + '.db'),
     autoload: true
   })
 }
@@ -47,11 +57,11 @@ app.post('/api', (req, res) => {
   console.log('[' + showTime() + '] /api: ' + query)
   if (query.match(/^[0-9]{3}-?[0-9]{4}$/g)) {
     const postalCode = query.replace(/-/g, '')
-    createDB(postalCode.slice(0, -4)).findOne({postalCode}, (error, doc) => {
-      console.log({error, doc})
-      doc ? delete doc._id : false
-      if (error || !doc) return res.json({error: {type: 'notFound'}})
-      return res.json({post: doc})
+    if (!checkDB(postalCode.slice(0, -4))) return res.json({error: {type: 'notFound'}})
+    createDB(postalCode.slice(0, -4)).find({postalCode}, (error, doc) => {
+      doc.map((each) => delete each._id)
+      if (error || doc.length === 0) return res.json({error: {type: 'notFound'}})
+      return res.json({postalCode, address: doc})
     })
   } else {
     return res.json({error: {type: 'notMatch'}})
