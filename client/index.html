@@ -194,33 +194,35 @@
   </small>
 </body>
 <script>
-document.getElementById('send').addEventListener('click', (e) => {
+document.getElementById('send').addEventListener('click', function (e) {
   e.preventDefault()
   const input = document.getElementsByTagName('input')[0]
   const req = document.getElementById('request')
   const res = document.getElementById('result')
+  req.innerHTML = ''
+  res.innerHTML = ''
   const request = new XMLHttpRequest()
   request.onreadystatechange = function () {
     if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
       const response = JSON.parse(request.response)
-      console.log('get result', response)
-      if (response.error || !response.post) {
+      console.warn('Result', response, (response.error || !response.postalCode))
+      if (response.error) {
         console.log('err')
         return res.innerHTML = '<div class="error"><h3><span>Error</span><label>error:</label>' + response.error.type + '</h3><div class="json">' + JSON.stringify(response, null, "　").replace(/\n/g, '<br>') + '</div></div>'
       }
-      return res.innerHTML = '<div class="success"><h3><span>Success</span><label>response:</label>' + response.post.address + '</h3><div class="json">' + JSON.stringify(response, null, "　").replace(/\n/g, '<br>') + '</div></div>'
+      return res.innerHTML = '<div class="success"><h3><span>Success</span><label>response:</label>' + response.postalCode + '</h3><div class="json">' + JSON.stringify(response, null, "　").replace(/\n/g, '<br>') + '</div></div>'
     }
   }
-  request.addEventListener('progress', function(event) {
-    console.log('Error', event)
-    return req.innerHTML = ''
-    return res.innerHTML = ''
+  request.addEventListener('progress', function (event) {
+    console.log('Progress', event)
+    req.innerHTML = ''
+    res.innerHTML = ''
   })
-  request.addEventListener('error', function(event) {
+  request.addEventListener('error', function (event) {
     console.log('Error', event)
     return req.innerHTML = '<div class="error"><h3><span>Error</span><label>error:</label>Network Error</h3><div>' + JSON.stringify({error: {type: 'serverNotWorking'}}, null, "　").replace(/\n/g, '<br>') + '</div></div>'
   })
-  request.addEventListener('load', function(event) {
+  request.addEventListener('load', function (event) {
     console.log('Load', event)
     return req.innerHTML = '<div class="send"><h3><span>Success</span><label>query:</label>' + input.value + '</h3><div class="json">' + JSON.stringify({query: input.value}, null, "　").replace(/\n/g, '<br>') + '</div></div>'
   })
