@@ -1,2 +1,2 @@
-{"type":"normal","postalCode":"5390000","fullAddress":"大阪府大阪市中央区","address":{"prefecture":"大阪府","city":"大阪市中央区","town":""},"kana":{"prefecture":"オオサカフ","city":"オオサカシチュウオウク","town":""},"jisCode":"712","oldPostalCode":"539  ","_id":"b6cgsktnj7N0ySXA"}
-{"type":"office","postalCode":"5398794","oldPostalCode":"53999","name":"大阪貯金事務センター","jisCode":"710","fullAddress":"大阪府大阪市天王寺区城南寺町９－８","address":{"prefecture":"大阪府","city":"大阪市天王寺区","town":"城南寺町","place":"９－８"},"_id":"0VYbshqxSrp6qoJb"}
+{"type":"general","postalCode":"5390000","fullAddress":"大阪府大阪市中央区","address":{"prefecture":"大阪府","city":"大阪市中央区","town":""},"kana":{"prefecture":"オオサカフ","city":"オオサカシチュウオウク","town":""},"jisCode":"712","oldPostalCode":"539  ","_id":"3vyGL88mGgbXAkQV"}
+{"type":"office","postalCode":"5398794","oldPostalCode":"53999","name":"大阪貯金事務センター","jisCode":"710","fullAddress":"大阪府大阪市天王寺区城南寺町９－８","address":{"prefecture":"大阪府","city":"大阪市天王寺区","town":"城南寺町","place":"９－８"},"_id":"C1qdEDRQOzsiAxyY"}
