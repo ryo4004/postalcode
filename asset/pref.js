@@ -125,7 +125,7 @@ const make = async () => {
       }
 
       const item = {
-        type: 'normal',
+        type: 'general',
         postalCode,
         fullAddress: newAddress.prefecture + newAddress.city + newAddress.town,
         address: newAddress,
@@ -143,7 +143,7 @@ const make = async () => {
       exceptCount++
       exceptCountEach++
       const exceptItem = {
-        type: 'normal',
+        type: 'general',
         postalCode,
         fullAddress: address.prefecture + address.city + address.town,
         address,
