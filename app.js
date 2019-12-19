@@ -48,10 +48,6 @@ const createDB = (id) => {
   })
 }
 
-app.get('/', function(req, res) {
-  res.send('Hello World!')
-})
-
 app.post('/api', (req, res) => {
   const query = req.body.query
   console.log('[' + showTime() + '] /api: ' + query)
