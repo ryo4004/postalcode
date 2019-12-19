@@ -54,7 +54,7 @@ POSTでパラメータを送信します。
 
 `1000001`でリクエストした例
 
-```
+```json
 {
 　"postalCode": "1000001",
 　"address": [
@@ -104,7 +104,7 @@ POSTでパラメータを送信します。
 
 `1008066`でリクエストした例
 
-```
+```json
 {
 　"postalCode": "1008066",
 　"address": [
@@ -141,13 +141,13 @@ Node.jsがインストールされた環境を用意します。
 
 リポジトリをクローンし、必要なパッケージをインストールします。
 
-```
+```shell
 git clone https://github.com/ryo4004/postalcode.git && cd postalcode && npm install
 ```
 
 実行します。
 
-```
+```shell
 node app.js
 ```
 
@@ -165,7 +165,7 @@ Expressサーバが起動し、3000番ポートでリクエストを待機しま
 作業は`asset`ディレクトリで行います。
 古いデータを削除します。
 
-```
+```shell
 cd asset
 rm -R database
 ```
@@ -178,7 +178,7 @@ rm -R database
 
 以下のコマンドでダウンロードおよび解凍を行います。
 
-```
+```shell
 wget https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip
 wget https://www.post.japanpost.jp/zipcode/dl/jigyosyo/zip/jigyosyo.zip
 unzip ken_all.zip
@@ -193,7 +193,7 @@ unzip jigyosyo.zip
 除外したデータは`database/except.db`に配置されます。
 事業所データは全てデータベースに追加されます。
 
-```
+```shell
 node make.js; node office.js
 ```
 

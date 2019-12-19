@@ -54,7 +54,7 @@ The data type can be determined by `type` parameter.
 
 Example requested in `1000001`.
 
-```
+```json
 {
 　"postalCode": "1000001",
 　"address": [
@@ -104,7 +104,7 @@ The configuration of `address` is as follows:
 
 Example requested in `1008066`.
 
-```
+```json
 {
 　"postalCode": "1008066",
 　"address": [
@@ -132,13 +132,13 @@ Prepare an environment with Node.js installed.
 
 Clone Repository and install dependencies.
 
-```
+```shell
 git clone https://github.com/ryo4004/postalcode.git && cd postalcode && npm install
 ```
 
 Run node app.
 
-```
+```shell
 node app.js
 ```
 
@@ -155,7 +155,7 @@ You can check also my [demo](https://postalcode.netlify.com).
 Update the postal code database.
 You work in the `asset` directory.
 
-```
+```shell
 cd asset
 rm -R database
 ```
@@ -167,7 +167,7 @@ This project uses the "全国一括" file in "読み仮名データの促音・�
 
 Download and unzip with the following command.
 
-```
+```shell
 wget https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip
 wget https://www.post.japanpost.jp/zipcode/dl/jigyosyo/zip/jigyosyo.zip
 unzip ken_all.zip
@@ -182,8 +182,8 @@ Exclude some postal code data because public data contains some data that might 
 The excluded data is placed in `database/except.db`.
 All office data is added to the database.
 
-```
-node make.js
+```shell
+node make.js; node office.js
 ```
 
 The postal code data is updated every month, so you need to update the database each time.
