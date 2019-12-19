@@ -159,7 +159,7 @@
     display: block;
     width: 100%;
     max-width: 450px;
-    margin: 0 auto;
+    margin: 0 auto 60px;
   }
 </style>
 <body>
@@ -207,7 +207,7 @@ document.getElementById('send').addEventListener('click', function (e) {
       const response = JSON.parse(request.response)
       console.warn('Result', response, (response.error || !response.postalCode))
       if (response.error) {
-        console.log('err')
+        console.log('error')
         return res.innerHTML = '<div class="error"><h3><span>Error</span><label>error:</label>' + response.error.type + '</h3><div class="json">' + JSON.stringify(response, null, "　").replace(/\n/g, '<br>') + '</div></div>'
       }
       return res.innerHTML = '<div class="success"><h3><span>Success</span><label>response:</label>' + response.postalCode + '</h3><div class="json">' + JSON.stringify(response, null, "　").replace(/\n/g, '<br>') + '</div></div>'
