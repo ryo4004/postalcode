@@ -56,26 +56,26 @@ Example requested in `1000001`.
 
 ```json
 {
-　"postalCode": "1000001",
-　"address": [
-　　{
-　　　"type": "normal",
-　　　"postalCode": "1000001",
-　　　"fullAddress": "東京都千代田区千代田",
-　　　"address": {
-　　　　"prefecture": "東京都",
-　　　　"city": "千代田区",
-　　　　"town": "千代田"
-　　　},
-　　　"kana": {
-　　　　"prefecture": "トウキョウト",
-　　　　"city": "チヨダク",
-　　　　"town": "チヨダ"
-　　　},
-　　　"jisCode": "310",
-　　　"oldPostalCode": "100 "
-　　}
-　]
+  "postalCode": "1000001",
+  "address": [
+    {
+      "type": "normal",
+      "postalCode": "1000001",
+      "fullAddress": "東京都千代田区千代田",
+      "address": {
+        "prefecture": "東京都",
+        "city": "千代田区",
+        "town": "千代田"
+      },
+      "kana": {
+        "prefecture": "トウキョウト",
+        "city": "チヨダク",
+        "town": "チヨダ"
+      },
+      "jisCode": "310",
+      "oldPostalCode": "100 "
+    }
+  ]
 }
 ```
 
@@ -106,23 +106,23 @@ Example requested in `1008066`.
 
 ```json
 {
-　"postalCode": "1008066",
-　"address": [
-　　{
-　　　"type": "office",
-　　　"postalCode": "1008066",
-　　　"oldPostalCode": "100 ",
-　　　"name": "株式会社 日本経済新聞社",
-　　　"jisCode": "310",
-　　　"fullAddress": "東京都千代田区大手町１丁目３－７",
-　　　"address": {
-　　　　"prefecture": "東京都",
-　　　　"city": "千代田区",
-　　　　"town": "大手町",
-　　　　"place": "１丁目３－７"
-　　　}
-　　}
-　]
+  "postalCode": "1008066",
+  "address": [
+    {
+      "type": "office",
+      "postalCode": "1008066",
+      "oldPostalCode": "100 ",
+      "name": "株式会社 日本経済新聞社",
+      "jisCode": "310",
+      "fullAddress": "東京都千代田区大手町１丁目３－７",
+      "address": {
+        "prefecture": "東京都",
+        "city": "千代田区",
+        "town": "大手町",
+        "place": "１丁目３－７"
+      }
+    }
+  ]
 }
 ```
 
