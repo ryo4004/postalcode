@@ -1,4 +1,4 @@
-![postalcode](https://user-images.githubusercontent.com/25874594/70858752-59ee0200-1f4b-11ea-9a2a-510bcb91e398.png)
+![postalcode](https://user-images.githubusercontent.com/25874594/71135740-d3386e00-2245-11ea-855e-5178bc7c0069.png)
 
 Postal Codeは、Express(Node.js)で動作する郵便番号を検索するAPIを作成できます。  
 郵便番号データは日本郵便が公開している[郵便番号データ](https://www.post.japanpost.jp/zipcode/download.html)を元に[NeDB](https://github.com/louischatriot/nedb)データベースを作成します。
