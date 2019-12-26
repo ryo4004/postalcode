@@ -48,6 +48,10 @@ const createDB = (id) => {
   })
 }
 
+app.get('/', function(req, res) {	
+  res.send('Demo: https://postalcode.netlify.com')	
+})
+
 app.post('/api', (req, res) => {
   const query = req.body.query
   console.log('[' + showTime() + '] /api: ' + query)
